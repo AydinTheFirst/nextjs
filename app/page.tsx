@@ -16,6 +16,8 @@ import { Footer } from "./components/Footer";
 import { SparklesCore } from "@/components/Sparkles/Sparkles";
 import { Meteors } from "@/components/Meteors/Meteors";
 import { TextGenerateEffect } from "@/components/TextGenerate/TextGenerate";
+import { BackgroundGradient } from "@/components/BgGradient/BgGradient";
+import { Cards } from "./components/Cards";
 
 const text =
   "We are dedicated to creating stunning, accessible, fast, and secure websites that perform seamlessly across all browsers and ensure an exceptional experience for everyone.";
@@ -34,7 +36,7 @@ const Home = () => {
         particleColor="#FFFFFF"
       />
 
-      <div className="container md:mt-10">
+      <div className="container md:my-10">
         <div
           className="row g-3"
           style={{
@@ -45,6 +47,7 @@ const Home = () => {
             <div className="flex flex-col justify-center">
               <br />
               <Showcase />
+
               <br />
               <h3 className="text-lg font-bold text-gray-700 dark:text-gray-400">
                 <TextGenerateEffect words={text} />
@@ -92,14 +95,21 @@ const Home = () => {
             <div className="text-center">
               <Code className="text-lg font-bold">
                 Expreince the Extraordinary
+                <div className="relative">
+                  <div className="absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
+                  <div className="absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+                  <div className="absolute inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
+                  <div className="absolute inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
+                </div>
               </Code>
             </div>
           </div>
         </div>
       </div>
 
-      <Cards />
-      <br />
+      <div className="container mb-5">
+        <Cards />
+      </div>
 
       <Footer />
     </>
@@ -107,81 +117,3 @@ const Home = () => {
 };
 
 export default Home;
-
-const Cards = () => {
-  const cards = [
-    {
-      title: "Fast and Optimized",
-      icon: FaBolt,
-      iconClass: "rounded p-2 text-4xl text-yellow-500 dark:bg-yellow-950",
-      description:
-        "Enhance website loading speed through caching and Content Delivery Network (CDN) integration, ensuring a smooth user experience.",
-    },
-    {
-      title: "Secure and Reliable",
-      icon: FaUserSecret,
-      iconClass: "rounded p-2 text-4xl text-blue-500 dark:bg-blue-950",
-      description:
-        "Protect your website from threats and vulnerabilities with the latest security practices and regular security audits.",
-    },
-    {
-      title: "Scalable and Efficient",
-      icon: FaServer,
-      iconClass: "rounded p-2 text-4xl text-green-500 dark:bg-green-950",
-      description:
-        "Build a scalable and efficient website that can handle high traffic and large amounts of data without compromising performance.",
-    },
-    {
-      title: "Custom Solutions",
-      icon: FaServer,
-      iconClass: "rounded p-2 text-4xl text-cyan-500 dark:bg-cyan-950",
-      description: "Create custom solutions tailored to your specific needs.",
-    },
-    {
-      title: "Animations and Interactions",
-      icon: FaServer,
-      iconClass: "rounded p-2 text-4xl text-indigo-500 dark:bg-indigo-950",
-      description:
-        "Create stunning animations and interactions that bring your website to life.",
-    },
-    {
-      title: "SEO Friendly",
-      icon: FaGoogle,
-      iconClass: "rounded p-2 text-4xl text-red-500 dark:bg-red-950",
-      description:
-        "Optimize your website for search engines to improve visibility and drive more traffic to your site.",
-    },
-  ];
-  return (
-    <>
-      <div className="container">
-        <div className="row g-3">
-          <div className="col-12">
-            <h1 className="text-3xl font-bold">What we provide?</h1>
-          </div>
-          {cards.map((card, index) => (
-            <div key={index} className="col-lg-4 col-md-6 ">
-              <Card
-                className="relative overflow-hidden dark:backdrop-blur-3xl"
-                style={{
-                  backgroundColor: "rgba(24, 24, 27, 0.4)",
-                }}
-              >
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <card.icon className={card.iconClass} />
-                    <h3 className="text-xl font-bold">{card.title}</h3>
-                  </div>
-                </CardHeader>
-                <CardBody className="">
-                  <p>{card.description}</p>
-                </CardBody>
-                <Meteors number={10} />
-              </Card>
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-};

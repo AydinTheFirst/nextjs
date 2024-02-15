@@ -2,7 +2,7 @@ import React from "react";
 
 export const Showcase = () => {
   return (
-    <div className="showcase ">
+    <div className="showcase">
       <video
         src="/title.mp4"
         autoPlay
