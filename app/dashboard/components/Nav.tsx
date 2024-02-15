@@ -23,7 +23,7 @@ export const Nav = ({ isMobile, sidebarOpen, setSidebarOpen }: NavProps) => {
   return (
     <nav
       id="navbar"
-      className="fixed left-0 top-0 z-50 w-full transition-all"
+      className="fixed left-0 top-0 z-30 w-full transition-all"
       style={{
         transform: `translateX(${sidebarOpen && !isMobile ? "260px" : "0"})`,
         width: sidebarOpen && !isMobile ? "calc(100% - 260px)" : "100%",

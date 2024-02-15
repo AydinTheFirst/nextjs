@@ -23,7 +23,7 @@ export const Sidenav = ({
 }: SidenavProps) => {
   return (
     <aside
-      className="dark:bg-dark fixed left-0 top-0 z-40 transition-all"
+      className="fixed left-0 top-0 z-40 transition-all dark:bg-dark"
       style={{
         width: "260px",
         height: "100%",
@@ -77,7 +77,7 @@ const Header = ({
 
 const PagesList = () => {
   const iconClasses =
-    "text-2xl text-default-500 pointer-events-none flex-shrink-0";
+    "text-2xl text-default-500 pointer-events-none flex-shrink-0 z-40";
 
   console.log(pages);
   return (
