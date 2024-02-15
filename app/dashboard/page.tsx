@@ -38,17 +38,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-const Test = () => {
-  return (
-    <div>
-      <Breadcrumbs>
-        <BreadcrumbItem>Home</BreadcrumbItem>
-        <BreadcrumbItem>Music</BreadcrumbItem>
-        <BreadcrumbItem>Artist</BreadcrumbItem>
-        <BreadcrumbItem>Album</BreadcrumbItem>
-        <BreadcrumbItem>Song</BreadcrumbItem>
-      </Breadcrumbs>
-    </div>
-  );
-};

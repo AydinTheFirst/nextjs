@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { useTheme } from "next-themes";
 import { Nav } from "./Nav";
 import { Sidenav } from "./Sidenav";
+import { authOptions } from "@/lib/auth";
 
 export const DashboardLayout = ({
   children,
@@ -12,9 +12,6 @@ export const DashboardLayout = ({
 }>) => {
   const [sidebarOpen, setSidebarOpen] = React.useState(true);
   const [isMobile, setIsMobile] = React.useState(false);
-  const { theme } = useTheme();
-
-  const logo = theme !== "dark" ? "/next-dark.svg" : "/next.svg";
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
